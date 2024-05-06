@@ -1,8 +1,11 @@
 [tool.poetry]
-name = "app"
+name = "GitEarn"
 version = "0.1.0"
-description = ""
-authors = ["Admin <admin@example.com>"]
+description = "GitEarn API"
+authors = ["Destiny Saturday <destinedcodes@gitearn.com>"]
+
+[tool.poetry.scripts]
+start = "gitearn.main:app"
 
 [tool.poetry.dependencies]
 python = "^3.10"
