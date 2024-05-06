@@ -1,7 +1,4 @@
-# GitEarn 🚀✨
-
-**Tired of unsustainable open-source projects and under-compensated developers?😩** GitEarn is here to revolutionize the game! 🔄
-
+# GitEarn 🚀
 
 ### What is GitEarn? 🤔
 
@@ -57,6 +54,7 @@ A huge thank you to the incredible open-source projects and developers who inspi
 
 * **📜 MIT License:** This project is licensed under the permissive MIT License (see LICENSE.md) 📜.
 * **🌟 Our Amazing Community:** Check out our list of awesome contributors!
+
 [![Contributors](https://contrib.rocks/image?repo=gitearn-io/gitearn)](https://github.com/gitearn-io/gitearn/graphs/contributors)
 
 **This is just the beginning. Let's build a brighter future for open source, together! 🌟✨🚀**
