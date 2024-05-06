@@ -1,0 +1,93 @@
+name: Bug Report
+description: Create a bug report to help us improve
+title: "🐛 Add Title Here"
+labels: ["bug"]
+projects: ["gitearn-io/1"]
+
+body:
+    - type: textarea
+      id: desc
+      attributes:
+          label: Bug Description
+          description: Describe the bug you encountered in detail.
+      validations:
+          required: true
+
+    - type: textarea
+      id: reproduction_steps
+      attributes:
+          label: Reproduction Steps
+          description: How can this bug be consistently reproduced? Please provide a step-by-step guide.
+      validations:
+          required: true
+
+    - type: dropdown
+      id: severity
+      attributes:
+          label: Bug Severity
+          description: If known, select the severity level of this bug.
+          options:
+              - Critical (blocks core functionality)
+              - Major (hinders core functionality)
+              - Minor (inconvenient but functional)
+              - Low (cosmetic issue)
+
+    - type: dropdown
+      id: reproducibility
+      attributes:
+          label: Reproducibility
+          description: If applicable, select how often you can reproduce this bug.
+          options:
+              - Always
+              - Frequently
+              - Occasionally
+              - Rarely
+
+    - type: textarea
+      id: expected
+      attributes:
+          label: Expected Behavior
+          description: Describe what you expected to happen in the scenario where the bug occurred.
+      validations:
+          required: true
+
+    - type: input
+      id: browser
+      attributes:
+          label: Browser
+          description: Enter the name and version of the browser you were using.
+      validations:
+          required: true
+
+    - type: input
+      id: os
+      attributes:
+          label: Operating System
+          description: Enter the name and version of your Operating System.
+      validations:
+          required: true
+
+    - type: input
+      id: extensions
+      attributes:
+          label: Extensions
+          description: If applicable, list any browser extensions you have installed (name and version).
+
+    - type: textarea
+      id: screenshots
+      attributes:
+          label: Screenshots
+          description: If applicable, please upload screenshots to help illustrate the bug.
+
+    - type: textarea
+      id: logs
+      attributes:
+          label: Error Logs
+          description: If you have any relevant error logs, please paste them here.
+          render: code
+
+    - type: textarea
+      id: additional_info
+      attributes:
+          label: Additional Information
+          description: Provide any other details that might be helpful in debugging the issue.

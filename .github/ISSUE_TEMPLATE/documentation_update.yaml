@@ -1,0 +1,32 @@
+name: Documentation Update
+description: Request a documentation update
+title: "📝 Update Title Here"
+labels: ["docs"]
+projects: ["gitearn-io/1"]
+
+body:
+    - type: textarea
+      id: description
+      attributes:
+          label: Documentation Update Description
+          description: Describe the desired update to the documentation in detail.
+          placeholder: Which sections require updates due to missing or inaccurate information?
+      validations:
+          required: true
+          min_length: 50
+
+    - type: textarea
+      id: desired_state
+      attributes:
+          label: Desired State
+          description: Explain the desired outcome of the update.
+          placeholder: Describe the desired information changes (add, clarify, remove) and their impact on user experience or understanding.
+      validations:
+          required: true
+
+    - type: textarea
+      id: additional_info
+      attributes:
+          label: Additional Information
+          description: Include any relevant resources, screenshots, or user feedback that might aid in understanding the update request.
+          placeholder: "Links, screenshots, user feedback, etc."

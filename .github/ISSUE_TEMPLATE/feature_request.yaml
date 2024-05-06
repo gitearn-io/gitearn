@@ -1,0 +1,42 @@
+name: Feature Request
+description: Request a new feature
+title: "✨ Add Title Here"
+labels: ["feature"]
+projects: ["gitearn-io/1"]
+
+body:
+    - type: textarea
+      id: description
+      attributes:
+          label: Feature Request Description
+          description: Describe your proposed new feature, explaining the problem it solves and the functionalities it provides.
+      validations:
+          required: true
+          min_length: 50
+
+    - type: dropdown
+      id: priority
+      attributes:
+          label: Feature Priority
+          description: If known, select the priority level for this feature.
+          options:
+              - High (critical to core functionality)
+              - Medium (important but can wait)
+              - Low (nice to have but not essential)
+
+    - type: textarea
+      id: use_case
+      attributes:
+          label: Use Case
+          description: Explain how this feature benefits users or the project.
+      validations:
+          required: true
+
+    - type: textarea
+      id: proposed_implementation
+      attributes:
+          label: Proposed Implementation
+          description:
+              If you have initial ideas on how this feature could be implemented,
+              please share them here. This will help developers understand your vision.
+          placeholder: "Outline of code changes, API additions, etc."
