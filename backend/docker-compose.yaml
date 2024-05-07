@@ -1,0 +1,16 @@
+name: gitearn
+
+services:
+  backend:
+    build: 
+      context: .
+    ports:
+      - "80:80"
+    environment:
+      - PROJECT_NAME=my_project
+      - POSTGRES_SERVER=my_postgres_server
+      - POSTGRES_USER=my_postgres_user
+      - POSTGRES_PASSWORD=my_postgres_password
+      - FIRST_SUPERUSER=my_first_superuser
+      - FIRST_SUPERUSER_PASSWORD=my_first_superuser_password
+

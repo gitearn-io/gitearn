@@ -1,4 +1,4 @@
-FROM python:3.12.3
+FROM python:3.12-slim
 
 WORKDIR /gitearn/
 
@@ -26,3 +26,9 @@ COPY ./prestart.sh /gitearn/
 COPY ./tests-start.sh /gitearn/
 
 COPY ./app /gitearn/app
+
+# Expose port 80
+EXPOSE 80
+
+CMD ["python3" "-m" "uvicorn" "app.main:app" "--port" "80"]
+

@@ -1,5 +1,4 @@
 name: gitearn
-version: '3.8'
 
 services:
   frontend:
