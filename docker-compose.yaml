@@ -1,0 +1,16 @@
+name: gitearn
+version: '3.8'
+
+services:
+  frontend:
+    build:
+      context: ./frontend
+      args:
+        - NODE_ENV=production
+        - VITE_API_URL=https://${DOMAIN?Variable not set}
+    restart: always
+    ports:
+      - "80:80"
+    volumes:
+      - .:/gitearn
+
