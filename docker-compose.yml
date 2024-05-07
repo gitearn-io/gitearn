@@ -36,7 +36,11 @@ services:
       - traefik.http.services.${STACK_NAME?Variable not set}-adminer.loadbalancer.server.port=8080
 
   backend:
-    image: '${DOCKER_IMAGE_BACKEND?Variable not set}:${TAG-latest}'
+    build:
+      context: ./backend
+      args:
+        INSTALL_DEV: ${INSTALL_DEV-false}
+    platform: linux/amd64 # Patch for M1 Mac
     restart: always
     networks:
       - traefik-public
@@ -63,12 +67,6 @@ services:
       - POSTGRES_USER=${POSTGRES_USER?Variable not set}
       - POSTGRES_PASSWORD=${POSTGRES_PASSWORD?Variable not set}
       - SENTRY_DSN=${SENTRY_DSN}
-
-    build:
-      context: ./backend
-      args:
-        INSTALL_DEV: ${INSTALL_DEV-false}
-    platform: linux/amd64 # Patch for M1 Mac
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
@@ -88,16 +86,15 @@ services:
       - traefik.http.routers.${STACK_NAME?Variable not set}-backend-https.middlewares=${STACK_NAME?Variable not set}-www-redirect
 
   frontend:
-    image: '${DOCKER_IMAGE_FRONTEND?Variable not set}:${TAG-latest}'
-    restart: always
-    networks:
-      - traefik-public
-      - default
     build:
       context: ./frontend
       args:
         - VITE_API_URL=https://${DOMAIN?Variable not set}
         - NODE_ENV=production
+    restart: always
+    networks:
+      - traefik-public
+      - default
     labels:
       - traefik.enable=true
       - traefik.docker.network=traefik-public
