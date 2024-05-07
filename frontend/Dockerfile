@@ -1,13 +1,13 @@
-    # Stage 0, "build-stage", based on Node.js, to build and compile the frontend
+# Stage 0, "build-stage", based on Node.js, to build and compile the frontend
 FROM node:20 as build-stage
 
-WORKDIR /app
+WORKDIR /gitearn
 
-COPY package*.json /app/
+COPY package*.json /gitearn/
 
 RUN npm install
 
-COPY ./ /app/
+COPY ./ /gitearn/
 
 ARG VITE_API_URL=${VITE_API_URL}
 
