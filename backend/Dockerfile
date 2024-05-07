@@ -1,4 +1,4 @@
-FROM tiangolo/uvicorn-gunicorn-fastapi:python3.10
+FROM python:3.12.3
 
 WORKDIR /app/
 
