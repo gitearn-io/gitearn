@@ -3,6 +3,7 @@ name = "GitEarn"
 version = "0.1.0"
 description = "GitEarn API"
 authors = ["Destiny Saturday <destinedcodes@gitearn.com>"]
+package-mode = false
 
 [tool.poetry.scripts]
 start = "gitearn.main:app"
