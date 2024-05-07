@@ -19,7 +19,5 @@ FROM nginx:mainline-perl
 
 COPY --from=build-stage /gitearn/dist/ /usr/share/nginx/html
 
-COPY --from=build-stage /gitearn/dist/ /usr/share/nginx/html
-
 COPY ./nginx.conf /etc/nginx/conf.d/default.conf
 COPY ./nginx-backend-not-found.conf /etc/nginx/extra-conf.d/backend-not-found.conf
